@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gerador EAN-13 — HTML + JS (Copy for Word)</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script type="text/javascript"
+        src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=B7_WwS6La69-X8c1dfGZVeiomSXcIsv0uAEAXG6TmE3dT5tfURXnjuMiy7Gvu17udAM2qkEU0B18klTCcruXHP9Q63DUZ8JSP-j9lUALJzbBYM4Ww_7A8VggGGe6eJ0qp6wKPLR78-yTHQf5zXI3ncOstert9I0i84jm-h-wNqXbZdruV97UZ-wdlhLt2mBpZdvTO3FIrlcNQv7rIlHyv_XUlH6NEqgnatIMw6M44vbqXFN93h5Mfl7ijGV9umLQJxk7SFlmNsDtqVzhKbEpFj6IeI3meG0B5MfJ-jAINmfhQEJMC2mfZP-mFO2oOcAKb8i3piGJNruONwE-dhPY5f4ER5EFku7__s1CEPAUfiEZq7LG9irJzyz_WrZDQE40gmxm0d9guqBmIheTdz4bw75q8yXZn4yQ6BQBq5PjyV6B9UriieGmH49PwD3f8UUUgRdd9D2GSPMX5FjLwmTi6HDUCBJ0bnM7xs5lv8BlhmeYdH576zSavfPX-YuCCA71__aj9SxF7QJaDxE69gAMebJm3DA-usQTqk1jVGPbq5tyTeh7oKbMskWLvPqVVfb3310UeTcgLFyodo2vIRB-xKi1VsMagdP9--zHCa1qkwyk6ar27FcsVdsmiTIHEs7byx8iD3X12rxEZ3Ndxm7qsov9kbK5Q-ZH3LizQbWRcK603OtSPeU1Md2WIh9OrzC9bKh0oj9Es03F2ddkx1HrLEZhuXDC9siHL_EJmDdhDS6v-ULu2lZbpUHny3Bf-3fD_JydrR7KYp3XbkUv9J8uBLeLl5acjdJaI7jAAp4YCWHF6kGTIOWN8QuRpylmUVF7TSnEO5T5f8C4DAkuFgcj0pNhU8_Z_m0oJZli028HmeUiYh8m90VSvAt7BmZj6i-bXWCLqY1F7rN_EDgN8g-NZzLGi8DXgyZv9K8vAqH4KPk9iwuo9xEvEuOebef6w5jpSaVymME18DhP_1NoPbk9eCqrtB2lENy8DINzyQCr7v1CrRQG6gUCOl0f5QzYYqYfXQixisxdkcxPH1Opm2HvXLLAa4yHYVOczOnGSUMPFqNS26how2Hdj2lC-h9xD_y367s-WSoZ9FNCy9_STlQl8n1YlcwReVLQHWP7Yuy_iFZErk-5j8p7OIaEWwuQQakunpY2Rl3z__XcszZrMepohwhSuF2himv2HojJkI3B6nKT9Im1XqC_R803VIq39s6qnQ37HIlhLsk3BvbrW95cYiQN7deegvwv6OjyCUqOvwlt_gvnuikNZwaQspuo3qWI66OQhMYucNvcCnVnMLqzbGpuwz_2ZxOnDpcu_mW0VNkCbPHC9S0LysJqUGJhtL4fOaduhlOz47nU0beZ3_qHULTMiXH-Js2RuJCrCinP1Ze5AsuV4D89_cgaHubwPGILXX_LNxOh5q3scpk6KVy8g9XY3msnM0btggY5dTsvELgfIekUxwA7m0OSEwLGLtjZ5IVxZT4MDWb-2dFqyOMOhZ92gmsiN2Gn4eAEvwIzMUxE2xHTYevNeVEmBV4QkCBt5HlSF6MpI1t7PHtU1RBNVtgcfuYrKiSNdjlGA9e24RNwuvInATiBEY23YFw1ZoHjvMDaB3IdYNoDvdqQnM0225idax8t-4ikLVTNFDMAkWbz8GCoNQMmMfdNTTkECYgFaAVpOs2HqNLUXG_cjkce_A"
+        nonce="d923c663d3a455cfcb4ddcbdf9330cc4" charset="UTF-8"></script>
+    <link rel="stylesheet" crossorigin="anonymous"
+        href="https://me.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9tYWlsLWF0dGFjaG1lbnQuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2F0dGFjaG1lbnQvdS8xLz91aT0yJmlrPTE4ODZkYWNlYzkmYXR0aWQ9MC4yJnBlcm1tc2dpZD1tc2ctYTpyNjc1NTI5NDgxODE1MzExNjM0NSZ2aWV3PWF0dCZkaXNwPXNhZmUmcmVhbGF0dGlkPWZfbWk0emttd2UwJnp3JnNhZGRiYXQ9QU5HamRKX05DdFl0RnAySFNQdUswbkNfaDJJOHZGVFpxTVBWUUhtdjBZdTZxeWMyeVRIRUZBWHh0TTl5MDdHOHVRQmVnV1ZoQUl5cndtcVlDbnpuRTJwZjFITnhkWnRSbzhkWVY1bEFmUUdUNzg2Yk9jVi1UNkhkLThya0NEaHlVM2Fib2FZLVo1TmlHRE5HWmpCQ3RZdEI0Y1FEWldtODhndy0yNndybVpNbkpQODgySm9zRkZ4c3ZqNEd3dHJtUVlkcVM4QnFEWlNULWtjaFJzX1I3bDRtNkg4SVdXNFJacHpSa0lVUFdIdlotMUZBRE5jeTkwczRGeVdEc21xV3d0YXd6TmF2bVRTdlpGd2FRUkdHdXlITFAzQXlxZFREX0ZHMnMtb1c0d3Z4cTl0VUNUM0ZSdVBxSURHNXhzVnJYbmkxWlA3cXZmVXBpVTk0N2FjU096NTVvVnF5eWxtNGpJYXZ1TVV2N3BfcFd6RlVNTWVFMzU0WGFYRmd0dHRQU3AzVF9LbTRlNy1McDVsMmhRWmtPSm5oSWtjNDB5Mzc3MnItTkZlcGtoWjZudUwwN0p0QlZxNVlUdElrYk1qQjlVNFFwWlUxc242alBRR3UwTEU3aFVvRTF0anpFRGpCeS1nckdwU2VEMUFNeDRHdWsxemRnS2p3dXdTQkNTWlRpSnpTNFY4UE1qbWNYZHFabGprekNlM2RMX3pfVGpOaHd4cENxSUNlRndmYUM0VUZ1NGhFaHQwWnh4clpRZjI1Q2phYnJUVk5xc2xJME0tR1B5eEY0N2FmY2xpdnBDU3NSTUhpdE9ySDZzelE1ZE1zNGM3MVRTWFQ5NjZ5c2JZcGhwNERmTzRJYlZTdVZteDY3Z1dMYVNZbEZIelI0N2RmbTJfcUhKUXBaZkZOT040anFUSm5LYUZIX0xlQ0pBMVdDVGhhdmhyWE9BZGtnUjRyZVR5emcyN1B2ak1pYmNlYi1zQktxeUlXb2hnY0djRG5mZFNfRmM2Q1NaVVFLdXZmQmtxU1VnMC1KWXQtUU9OeDlmZkw1UVBRUlhOdmJOSGFza2VxcmwtejJWMnl4Y3VyLTNzTkZ6dDc4bXhoenVZLUtza3Jfb3p2aDk5Ny04TDg4YU50YTdyaG5TWld2Q2RaWVVWYjhpNUZGR0w1ZEx3cmpEMEtKOGp1MHJXMGZ3anJtSnpvNWhoc1ZoeG16UHFPeEVYQ0NRa2RzakJmdVZYd2NlN2czaVJ0dExNVFkyUFN0QjVOY29tNlc2WmYyRzlDZkhCYkcxQzJyMVA3ajFEWFZKcE1QVGd0ZUlFRExaNzZBSmpBSm52ODhSQ2MwT0lWeXl2bFlWcml6a1BqdmdiRWplTS1nWWFjT2xUUE1JYUItZEdyZXZjMmczV1BsZE9NMG84bS1kU3loUQ" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Gerador de código EAN-13</h1>
+            <p class="lead">Gere códigos EAN-13 online grátis de forma rápida e prática, prontos para uso em produtos e
+                sistemas comerciais.</p>
+
+            <div class="grid">
+                <div>
+                    <div class="input-group">
+                        <label for="code">Código (12 ou 13 dígitos)</label>
+                        <input id="code" type="text" inputmode="numeric" placeholder="Ex: 123456789012"
+                            maxlength="13" />
+                    </div>
+
+                    <div class="row">
+                        <div style="flex:1">
+                            <label for="scale">Largura (scale)</label>
+                            <input id="scale" type="number" min="1" max="6" value="2" />
+                        </div>
+                        <div style="width:160px">
+                            <label for="height">Altura (px)</label>
+                            <input id="height" type="number" min="20" max="300" value="80" />
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top:8px">
+                        <div style="flex:1">
+                            <label for="margin">Margem (px)</label>
+                            <input id="margin" type="number" min="0" max="60" value="10" />
+                        </div>
+                        <div style="width:160px">
+                            <label for="fontsize">Fonte (px)</label>
+                            <input id="fontsize" type="number" min="8" max="36" value="14" />
+                        </div>
+                    </div>
+
+                    <div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+                        <label class="inline"><input id="transparent" type="checkbox" checked /> <span
+                                class="muted">Fundo transparente</span></label>
+
+                        <label class="inline" style="margin-left:6px"><span class="muted">Formato:</span>
+                            <select id="format"
+                                style="margin-left:6px;padding:8px;border-radius:6px;border:1px solid #e6e9ef">
+                                <option value="png">PNG (imagem)</option>
+                                <option value="svg">SVG (vetorial)</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="controls">
+                        <button id="gen">Gerar</button>
+                        <button class="ghost small" id="download">Baixar</button>
+                        <button id="copyForWord" class="small">Copiar código</button>
+                        <button id="openTab" class="small ghost">Abrir imagem em nova aba</button>
+                        <button id="example" class="small ghost">Exemplo</button>
+                        <div style="margin-left:auto" class="pill">Profissional</div>
+                    </div>
+
+                    <div id="message" class="muted" style="margin-top:8px"></div>
+
+                    <div class="helper">
+                        <strong>Como colar no Word:</strong>
+                        <ol>
+                            <li>Preencha o campo com o seu código.</li>
+                            <li>Ajuste as configurações de altura e largura, ou deixe no padrão.</li>
+                            <li>Escolha se deseja fundo transparente ou não, e selecione o formato PNG ou SVG.</li>
+                            <li>Gere o código. Após gerar, você poderá baixar ou copiar para a área de transferência
+                                para usar em documentos como Word.</li>
+                        </ol>
+                        <div class="muted">Se o navegador não permitir copiar imagens (alguns navegadores/versões
+                            limitam a API), use <em>Abrir imagem em nova aba</em> e faça <strong>botão direito → Copiar
+                                imagem</strong> ou salve e insira no Word.</div>
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="card" style="padding:12px">
+                        <div class="muted" style="margin-bottom:8px">Pré-visualização</div>
+                        <div id="preview" class="preview"></div>
+                        <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
+                            <div class="muted">EAN gerado:</div>
+                            <div id="eanValue" class="pill"
+                                style="background:#fff;border:1px solid #eef2f7;color:#0f172a;padding:6px 10px">—</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>
